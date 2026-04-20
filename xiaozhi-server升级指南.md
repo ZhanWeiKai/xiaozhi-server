@@ -28,19 +28,19 @@
 | `~/xiaozhi-dev/` | 旧版本（当前运行） | 不修改，稳定后删除 |
 | `~/xiaozhi-dev-4-20/` | 新版本（官方镜像） | 新建，数据独立 |
 
-新目录需要的文件（仅复制必要的，不复制旧 tar 包、构建脚本等历史遗留）：
+新目录需要的文件（仅复制数据和模型，**不要复制 core/ 等代码文件，否则会覆盖新版本内置代码**）：
 
 ```
 ~/xiaozhi-dev-4-20/
-├── docker-compose-final.yml    # 新的 compose 文件（上传）
+├── docker-compose.yml          # 新的 compose 文件（上传）
 ├── data/
-│   └── .config.yaml            # 从旧目录复制（12KB）
+│   └── .config.yaml            # 从旧目录复制后，需修改 manager-api.url 端口 8080→8003
 ├── models/SenseVoiceSmall/
 │   └── model.pt                # 从旧目录复制（893MB）
-├── core/                       # 从旧目录复制（1.8MB，自定义代码）
+├── core/                       # 从新容器提取（docker cp），不要从旧目录复制！
 ├── mysql/
 │   └── data/                   # 停旧服务后用 sudo 复制（104MB）
-└── uploadfile/                 # 从旧目录复制（12KB）
+└── uploadfile/                 # 可选，从旧目录复制
 ```
 
 **不需要复制的文件**（旧目录历史遗留，约 1.7GB）：
@@ -441,7 +441,16 @@ docker logs xiaozhi-esp32-server --tail 20
 ### 注意事项
 
 1. **更新前确认服务正常**，不要在异常状态下更新
-2. **core/ 挂载的代码不会随镜像更新**，如果新版本修改了 core/ 中的模块结构，需要手动同步代码
+2. **core/ 挂载的代码不会随镜像更新**，每次更新镜像后需要手动同步：
+   ```bash
+   # 拉取新镜像后，重新提取 core/ 代码
+   docker compose up -d                              # 先启动新镜像
+   docker cp xiaozhi-esp32-server:/opt/xiaozhi-esp32-server/core /tmp/core-new
+   rm -rf ~/xiaozhi-dev-4-20/core/__pycache__
+   rm -rf ~/xiaozhi-dev-4-20/core && mv /tmp/core-new ~/xiaozhi-dev-4-20/core
+   docker compose up -d                              # 重建容器使用新 core/
+   ```
+   **千万不要从旧目录 `~/xiaozhi-dev/core/` 复制**，那是旧版本代码，会覆盖新版本
 3. **config.yaml 不会自动更新**，新版本如有新增配置项需要手动添加
-4. **如果更新后出问题**，旧镜像标签仍存在（`server_latest`、`web_latest` 会指向最新版），Docker 会保留之前的镜像层，可用 `docker images` 查看历史镜像并手动回退
+4. **如果更新后出问题**，旧镜像标签仍存在，Docker 会保留之前的镜像层，可用 `docker images` 查看历史镜像并手动回退
 5. **磁盘清理**：多次更新后旧镜像层会占用空间，定期执行 `docker image prune -f` 清理

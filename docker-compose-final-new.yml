@@ -28,7 +28,6 @@ services:
       - ./data:/opt/xiaozhi-esp32-server/data
       - ./models/SenseVoiceSmall/model.pt:/opt/xiaozhi-esp32-server/models/SenseVoiceSmall/model.pt
       - ./uploadfile:/opt/xiaozhi-esp32-server/uploadfile
-      - ./core:/opt/xiaozhi-esp32-server/core
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8003/"]
       interval: 30s
