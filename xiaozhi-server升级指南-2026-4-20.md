@@ -435,8 +435,20 @@ docker logs xiaozhi-esp32-server --tail 20
 - [ ] `xiaozhi-esp32-server` 容器正常运行
 - [ ] `xiaozhi-esp32-server-web` 容器正常运行
 - [ ] 端口 8000、8002 可访问
+- [ ] OTA 接口可访问：`curl https://xiaozhi.jamesweb.org/api/ota/`
 - [ ] FunASR / CosyVoice 连通
 - [ ] WebUI 能正常连接对话
+
+### 升级遗漏记录
+
+> 以下问题在首次升级时遇到，记录备查。
+
+**nginx OTA 转发端口未更新**
+
+- **现象**：`https://xiaozhi.jamesweb.org/api/ota/` 返回 502
+- **原因**：nginx 配置中 OTA 的 `proxy_pass` 仍指向旧版 `172.18.0.5:8080`（旧的 manager-api），升级后 Java API 合并到 `xiaozhi-esp32-server-web`，端口改为 8002
+- **修复**：修改 `/etc/nginx/sites-enabled/xiaozhi-webui.conf`，将 OTA 的 `proxy_pass` 端口从 8080 改为 8002
+- **教训**：升级时需同步检查所有引用旧端口的配置（`.config.yaml`、nginx、其他服务连接地址）
 
 ### 注意事项
 
