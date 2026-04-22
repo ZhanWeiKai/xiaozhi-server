@@ -450,6 +450,13 @@ docker logs xiaozhi-esp32-server --tail 20
 - **修复**：修改 `/etc/nginx/sites-enabled/xiaozhi-webui.conf`，将 OTA 的 `proxy_pass` 端口从 8080 改为 8002
 - **教训**：升级时需同步检查所有引用旧端口的配置（`.config.yaml`、nginx、其他服务连接地址）
 
+**nginx OTA 转发使用容器内网 IP 导致不稳定（2026-04-22）**
+
+- **现象**：`https://xiaozhi.jamesweb.org/api/ota/` 返回 502 Bad Gateway
+- **原因**：nginx 配置中 OTA 的 `proxy_pass` 使用了容器内网 IP `172.18.0.5:8002`，Docker 容器重建后内网 IP 变为 `172.18.0.4`，nginx 写死旧 IP 导致无法转发
+- **修复**：修改 `/etc/nginx/sites-enabled/xiaozhi-webui.conf`，将 `172.18.0.5:8002` 改为 `127.0.0.1:8002`，使用宿主机映射端口而非容器内网 IP，避免容器重建后 IP 变化导致再次故障
+- **教训**：nginx 配置不要写死容器内网 IP，应使用 `127.0.0.1:映射端口`，Docker 每次重建容器内网 IP 可能变化
+
 ### 注意事项
 
 1. **更新前确认服务正常**，不要在异常状态下更新
