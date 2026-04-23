@@ -1,0 +1,181 @@
+1.这是本地部署的cosyvoice api log
+
+260423 12:08:42[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-大模型收到用户消息: 你好
+260423 12:08:42[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] 预处理耗时: 0.0s
+260423 12:08:45[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM 首段文本返回耗时: 2.94s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "🙂" 间隔: 0.0s  累计: 8.34s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: " " 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "嘿" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "嘿" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "你好" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "呀" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "我是" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "L" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "ily" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "你的" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "英语" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "老师" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "啦" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "白天" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "教" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "英语" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "晚上" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "有时候" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "会" 间隔: 0.0s  累计: 8.35s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "去" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "玩" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "玩" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "音乐" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "嘿嘿" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "~
+
+" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "找我" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "有什么" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "可以" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "帮" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "到" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "你的" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "吗" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "？" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "想" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "学" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "英文" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "呀" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "还是" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "想" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "聊" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "聊天" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "？" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "都可以" 间隔: 0.0s  累计: 8.36s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "的" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "别" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "客气" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "啦" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM token: "😆" 间隔: 0.0s  累计: 8.37s
+260423 12:08:51[0.9.2-SiFuChd3nocaCh][core.connection]-INFO-[PERF] LLM 流式输出结束，总耗时: 8.37s  累计token数: 84
+260423 12:08:53[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送第一段语音: 嘿嘿
+260423 12:08:53[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 嘿嘿
+260423 12:08:53[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 嘿嘿，重试0次
+260423 12:08:53[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 2.11s - 嘿嘿
+260423 12:08:56[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 你好呀
+260423 12:08:56[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 你好呀，重试0次
+260423 12:08:56[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 2.75s - 你好呀
+260423 12:08:59[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 我是Lily，你的英语老师啦
+260423 12:08:59[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 我是Lily，你的英语老师啦，重试0次
+260423 12:08:59[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 3.13s - 我是Lily，你的英语老师啦
+260423 12:09:03[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 白天教英语，晚上有时候会去玩玩音乐，嘿嘿~找我有什么可以帮到你的吗？
+260423 12:09:03[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 白天教英语，晚上有时候会去玩玩音乐，嘿嘿~找我有什么可以帮到你的吗？，重试0次
+260423 12:09:03[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 4.4s - 白天教英语，晚上有时候会去玩玩音乐，嘿嘿~找我有什么可以帮到你的吗？
+260423 12:09:06[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 想学英文呀，还是想聊聊天？
+260423 12:09:06[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 想学英文呀，还是想聊聊天？，重试0次
+260423 12:09:06[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 3.08s - 想学英文呀，还是想聊聊天？
+260423 12:09:09[0.9.2-SiFuChd3nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 都可以的，别客气啦
+260423 12:09:09[0.9.2-00000000000000][core.providers.tts.base]-INFO-语音生成成功: 都可以的，别客气啦，重试0次
+260423 12:09:09[0.9.2-00000000000000][core.providers.tts.base]-INFO-[PERF] TTS 耗时: 3.07s - 都可以的，别客气啦
+
+
+
+
+
+
+
+
+
+
+
+
+2.这是调用cosyvocie-3.5-plus 的api log
+
+260423 12:09:55[0.9.2-SiFuChb7nocaCh][core.handle.textMessageProcessor]-INFO-收到listen消息：{"type":"listen","state":"detect","text":"你好","source":"text"}
+260423 12:09:55[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-大模型收到用户消息: 你好
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-开始启动TTS会话...
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-开始会话～～1404a09e88e548ec8ee4c6bb6be7e3e3
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-开始建立新连接...
+260423 12:09:55[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] 预处理耗时: 0.0s
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-WebSocket连接建立成功
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-TTS请求参数: {"text_type": "PlainText", "voice": "cosyvoice-v3.5-plus-bailian-2493f089f8b94d77b68d952a23ae6262", "format": "pcm", "sample_rate": 24000, "volume": 50, "rate": 1.0, "pitch": 1.0, "instruction": "请用自然标准香港广东话"}
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-会话启动请求已发送
+260423 12:09:55[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-TTS会话启动成功
+260423 12:09:56[0.9.2-SiFuChb7nocaCh][core.handle.sendAudioHandle]-INFO-发送第一段语音: None
+260423 12:09:56[0.9.2-SiFuChb7nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, None
+260423 12:09:57[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM 首段文本返回耗时: 2.34s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "🙂" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: " 你" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "好" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "呀" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "我是" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "L" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "ily" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "老师" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "很高兴" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "见到" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "你" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "呢" 间隔: 0.0s  累计: 4.4s
+260423 12:09:59[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 4.4s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "这么" 间隔: 1.69s  累计: 6.09s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "早" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "就在" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "这里" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "啦" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "有没有" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "遇到" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "什么" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "英语" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "问题" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "想" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "问我" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "呀" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "？" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "或者" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "想" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "聊" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "聊天" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "也可以" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "哦" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "~" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: " " 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "嘿" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "嘿" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "别" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "拘" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "束" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "，" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "把我" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "当成" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "朋友" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "就好" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "啦" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "！" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM token: "😉" 间隔: 0.0s  累计: 6.1s
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.connection]-INFO-[PERF] LLM 流式输出结束，总耗时: 6.1s  累计token数: 78
+260423 12:10:01[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-开始结束TTS会话...
+260423 12:10:01[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-关闭会话～～1404a09e88e548ec8ee4c6bb6be7e3e3
+260423 12:10:01[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-会话结束请求已发送
+260423 12:10:01[0.9.2-00000000000000][core.providers.tts.alibl_stream]-INFO-句子语音生成成功： 🙂 你好呀！我是Lily老师，很高兴见到你呢！这么早就在这里啦，有没有遇到什么英语问题想问我呀？或者想聊聊天也可以哦~ 嘿嘿，别拘束，把我当成朋友就好啦！😉
+260423 12:10:01[0.9.2-SiFuChb7nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.FIRST, 🙂 你好呀！我是Lily老师，很高兴见到你呢！这么早就在这里啦，有没有遇到什么英语问题想问我呀？或者想聊聊天也可以哦~ 嘿嘿，别拘束，把我当成朋友就好啦！😉
+260423 12:10:06[0.9.2-SiFuChb7nocaCh][core.handle.sendAudioHandle]-INFO-发送音频消息: SentenceType.LAST, None
+
+
+
+
+
+
+
+
+
+
+
