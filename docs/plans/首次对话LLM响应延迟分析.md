@@ -1,8 +1,58 @@
 # 首次对话 LLM 响应延迟分析
 
-> 问题：每次新 WebSocket 连接后，第一句话 LLM 首段文本返回耗时 23s+，后续对话恢复正常（~5s）。
+> 问题：每次新 WebSocket 连接后，第一句话 LLM 首段文本返回耗时 10~60s 不等，TTS 因百炼 23 秒超时频繁失败。
 
-## 请求处理流程时序图
+## 已确认的解决方案
+
+**换用更快的 LLM 模型**。实测对比（从香港服务器发起，glm-4-flash，简单对话"你好"）：
+
+| API 端点 | Round 1 | Round 2 | Round 3 | Round 4 | 平均首 token |
+|---------|---------|---------|---------|---------|-------------|
+| `api.z.ai/api/coding/paas/v4` (代理) | 1.93s | 1.11s | 1.31s | 1.49s | **1.46s** |
+| `open.bigmodel.cn/api/coding/paas/v4` (官方) | 0.61s | 0.64s | 0.95s | 0.43s | **0.66s** |
+
+**结论**：`open.bigmodel.cn/api/coding/paas/v4` 比 `api.z.ai` 快一倍多。
+
+对比不同模型（`open.bigmodel.cn/api/coding/paas/v4`，简单对话"你好"）：
+
+| 模型 | 首 token 耗时 | 说明 |
+|------|-------------|------|
+| **glm-4-flash** | **0.4~1.0s** | 推荐使用，对话场景够用 |
+| glm-4.6 | 22~31s | 太慢，不适合实时对话 |
+| glm-4v-flash (VLLM) | ~1s | 视觉模型，首 token 也很快 |
+
+**最终配置**：
+- 模型：`glm-4-flash`
+- base_url：`https://open.bigmodel.cn/api/coding/paas/v4`（官方直连，比代理快）
+
+## 延迟来源实测分析（2026-04-23）
+
+从服务器日志采集的真实数据：
+
+| 时间 | 首字耗时 | 总耗时 | token 数 | 备注 |
+|------|---------|--------|---------|------|
+| 16:19:52 | 27.95s | 31.88s | 53 | 当时用的是 glm-4.6 |
+| 16:20:01 | 9.65s | 22.93s | 79 | |
+| 16:20:47 | 23.85s | 39.19s | 90 | |
+| 16:21:30 | 15.02s | 17.68s | 78 | |
+| 16:22:59 | **63.37s** | 63.37s | **0** | 返回 0 token，可能触发 function_call |
+| 16:23:01 | 41.45s | 48.75s | 86 | |
+
+网络延迟实测（从香港服务器）：
+- DNS: 0.08s, Connect: 0.08s, TLS: 0.10s → 总计 0.31s
+- **网络不是瓶颈，瓶颈在 LLM 模型推理速度**
+
+### TTS 23 秒超时的连锁反应
+
+百炼 DashScope WebSocket 协议要求 `run-task` 之后 **23 秒内必须收到第一条 `continue-task` 文本**，否则服务端主动断开。LLM 首字 10~60 秒导致 TTS 每次超时失效。
+
+```
+16:11:21  TTS会话启动成功 (run-task → task-started)
+16:11:44  TTS任务失败: request timeout after 23 seconds  ← 百炼等了23秒
+16:11:51  LLM首段文本返回耗时: 30.86s                      ← LLM太慢，TTS已死
+```
+
+## 原始分析（2024年，仅供参考）
 
 ```
 WebSocket连接建立
@@ -99,22 +149,15 @@ asyncio.run_coroutine_threadsafe(self.func_handler._initialize(), self.loop)
 
 ## 优化建议
 
-### 短期方案
+### 已完成
 
-1. **在 `_route_message` 中等待关键组件初始化完成**：增加 LLM 初始化完成的 Event，消息处理时先等待
-2. **Memory 查询设置超时**：`future.result(timeout=5)` 避免首次查询无限阻塞
-3. **扩大线程池**：避免初始化任务和 chat 任务互相阻塞
+- [x] LLM 模型从 glm-4.6 切换为 glm-4-flash（首 token 从 20+ 秒降到 1 秒以内）
+- [x] base_url 使用官方直连 `open.bigmodel.cn/api/coding/paas/v4`（比代理 api.z.ai 快一倍）
 
-### 中期方案
+### 待评估
 
-1. **LLM 连接预热**：初始化时发送一个空请求或 health check，提前建立网络连接
-2. **Memory 连接预热**：初始化时执行一次测试查询，提前建立数据库/API 连接
-3. **分离线程池**：初始化任务和请求处理任务使用不同的线程池
-
-### 长期方案
-
-1. **全局组件池**：LLM、Memory 等有状态组件做连接级别复用，而非每次 WebSocket 连接都重新创建
-2. **延迟初始化改为立即初始化**：将 `_background_initialize` 改为 `await`，确保消息处理前组件就绪
+1. **关闭不需要的 function_call**：当前启用了 get_weather、get_news、play_music 等工具，模型需额外判断是否调用，可能增加首 token 延迟。如果不需要每次对话都查天气/新闻，可考虑关闭
+2. **MCP 接入点优化**：日志显示 MCP 接入点初始化响应结果为空，可能影响 function_call 行为
 
 ## 相关代码文件
 
