@@ -87,6 +87,7 @@ class VADProvider(VADProviderBase):
                 conn._vad_state = state
                 conn._vad_context = audio_input[:, -64:]
                 speech_prob = out.item()
+                print(f"[VAD] prob={speech_prob:.3f} voice={'■' if speech_prob >= self.vad_threshold else '□'}")
 
                 # 双阈值判断
                 if speech_prob >= self.vad_threshold:
