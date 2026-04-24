@@ -61,7 +61,7 @@ class TTSProvider(TTSProviderBase):
         self.pitch = float(pitch) if pitch else 1.0
 
         # 指令参数（控制情感/方言/风格/自然度）
-        self.instruction = "语气自然轻松用地道香港广东话方言"
+        self.instruction = "语气霸气果断会用地道标准香港广东话方言"
 
         # 随机种子（0=默认行为，random=每次随机生成，其他数字=固定值可复现）
         seed_config = config.get("seed", "0")
@@ -190,6 +190,22 @@ class TTSProvider(TTSProviderBase):
                 )
                 continue
 
+    def _clean_text(self, text):
+        """清洗文本：过滤Markdown + 粤语发音矫正"""
+        filtered = MarkdownCleaner.clean_markdown(text)
+        filtered = filtered.replace("嘅", "既")
+        filtered = filtered.replace("冇", "无")
+        filtered = filtered.replace("咋样", "点样")
+        filtered = filtered.replace("唔", "嗯")
+        filtered = filtered.replace("嘢", "野")
+        filtered = filtered.replace("啲", "D")
+        filtered = filtered.replace("畀", "比")
+        filtered = filtered.replace("这里", "呢度")
+        filtered = filtered.replace("喺", "系")
+        filtered = filtered.replace("咁", "敢")
+        filtered = filtered.replace("睇", "体")
+        return filtered
+
     async def text_to_speak(self, text, _):
         """发送文本到TTS服务进行合成"""
         try:
@@ -197,11 +213,7 @@ class TTSProvider(TTSProviderBase):
                 logger.bind(tag=TAG).warning("WebSocket连接不存在，终止发送文本")
                 return
 
-            # 过滤Markdown
-            filtered_text = MarkdownCleaner.clean_markdown(text)
-
-            # 粤语发音矫正：嘅 → 既（TTS把嘅读kai，既读ge更接近粤语发音）
-            filtered_text = filtered_text.replace("嘅", "既")
+            filtered_text = self._clean_text(text)
 
             if filtered_text:
                 # 发送continue-task消息
@@ -500,7 +512,7 @@ class TTSProvider(TTSProviderBase):
                                 )
 
                     # 发送文本
-                    filtered_text = MarkdownCleaner.clean_markdown(text)
+                    filtered_text = self._clean_text(text)
                     # 发送continue-task消息
                     continue_task_message = {
                         "header": {
