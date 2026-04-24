@@ -61,7 +61,7 @@ class TTSProvider(TTSProviderBase):
         self.pitch = float(pitch) if pitch else 1.0
 
         # 指令参数（控制情感/方言/风格/自然度）
-        self.instruction = config.get("instruction", "请用自然标准香港广东话")
+        self.instruction = "语气自然轻松用地道香港广东话方言"
 
         # 随机种子（0=默认行为，random=每次随机生成，其他数字=固定值可复现）
         seed_config = config.get("seed", "0")
@@ -199,6 +199,9 @@ class TTSProvider(TTSProviderBase):
 
             # 过滤Markdown
             filtered_text = MarkdownCleaner.clean_markdown(text)
+
+            # 粤语发音矫正：嘅 → 既（TTS把嘅读kai，既读ge更接近粤语发音）
+            filtered_text = filtered_text.replace("嘅", "既")
 
             if filtered_text:
                 # 发送continue-task消息
