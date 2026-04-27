@@ -202,8 +202,11 @@ class TTSProvider(TTSProviderBase):
         filtered = filtered.replace("畀", "比")
         filtered = filtered.replace("这里", "呢度")
         filtered = filtered.replace("喺", "系")
+        filtered = filtered.replace("係", "系")
         filtered = filtered.replace("咁", "敢")
         filtered = filtered.replace("睇", "体")
+        filtered = filtered.replace("佢", "距")
+        filtered = filtered.replace("訊", "信")
         return filtered
 
     async def text_to_speak(self, text, _):
